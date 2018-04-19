@@ -1,0 +1,6 @@
+{% for cat in categories %}
+<li>
+    <span style="background-image: url('{{ cat.getImage().url }}');width: 30px;height: 30px;display: inline-block;background-size: contain"></span>
+    <a href="/categories/{{ cat.id }}">{{ cat.name }}</a>
+</li>
+{% endfor %}

@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="/media/libs/editor/Assets/MooEditable/MooEditable.css">
+<script type="text/javascript" src="/media/libs/editor/Demos/assets/mootools.js"></script>
+<script type="text/javascript" src="/media/libs/editor/Source/MooEditable/MooEditable.js"></script>
+
+<script type="text/javascript">
+    window.addEvent('domready', function(){
+        var mooeditable = $('ta1').mooEditable();
+    });
+</script>
+<style>
+    input,select{
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        width: 100%;
+    }
+</style>
+
+<form action="/home/addpostaction" method="post" enctype="multipart/form-data">
+    <label for="name_inp">Name:</label>
+    <input type="text" name="name" id="name_inp">
+    <label for="select_cat">Category</label>
+    <select name="cat" id="select_cat">
+        {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="file_inp">Image:</label>
+    <input type="file" name="image" id="file_inp" accept="image/*">
+
+
+    <textarea name="text"  id="ta1" style="display: block; width: 100%; height: 200px; resize: none; padding: 0 10px;"></textarea>
+
+    <input type="submit">
+</form>
+
+

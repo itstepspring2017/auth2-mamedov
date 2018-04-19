@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/media/css/register.css">
+<div class="form">
+    <form action="/regaction" method="post">
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <dl>
+            <dt><label for="login">Login:</label></dt>
+            <dd><input type="text" name="login" id="login" value="{{ old.login ? old.login : "" }}"></dd>
+            <dt><label for="pass">Password:</label></dt>
+            <dd><input type="password" name="pass" id="pass"></dd>
+            <dt><label for="conf">Confirm:</label></dt>
+            <dd><input type="password" name="conf" id="conf"></dd>
+            <dt><label for="mail">Email:</label></dt>
+            <dd><input type="email" name="mail" id="mail" value="{{ old.mail ? old.mail : "" }}"></dd>
+            <dt><input type="submit"></dt>
+        </dl>
+    </form>
+</div>
