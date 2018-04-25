@@ -1,0 +1,9 @@
+.header_nav{
+    width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.header_nav li{
+    flex: 1;
+}

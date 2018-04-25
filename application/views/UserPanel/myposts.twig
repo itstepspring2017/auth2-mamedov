@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="../media/css/main.css">
+{% for post in posts %}
+    <div class="blogs_container" style="background-image: url('../{{ post.getImage().url }}')">
+        <div >
+            <a href="#">{{ post.name }}</a>
+        </div>
+    </div>
+{% endfor %}

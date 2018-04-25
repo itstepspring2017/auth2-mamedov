@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+    <link rel="stylesheet" type="text/css" href="{{ URLROOT }}media/css/default.css">
+</head>
+<body>
+<header>
+    <div class="header_top_nav"></div>
+    <div class="logo">
+        <a href="/Blog/">LOGO</a>
+    </div>
+    <div class="header_entrance">
+        {% if not is_auth %}
+        <form action="login" method="post">
+            <input type="text" name="login" placeholder="login"><br>
+            <input type="password" name="pass" placeholder="password"><br>
+            <span class="submit_left"></span>
+            <input type="submit" value="enter">
+            <span class="submit_right"></span>
+        </form>
+        {% else %}
+            <a href="logout" class="exit">exit</a>
+        {% endif %}
+    </div>
+    <ul class="header_nav">
+        <li><a href="/Blog/">main</a></li>
+        <li><a href="categories">category</a></li>
+        <li><a href="regestry">regestry</a></li>
+        {% if is_auth %}
+        <li><a href="panel">user panel</a></li>
+        {% endif %}
+    </ul>
+</header>
+<main>
+    {{ view|raw }}
+</main>
+<footer>
+    <p>&copy All rights reserved</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

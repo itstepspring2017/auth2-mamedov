@@ -1,0 +1,14 @@
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+<form action="{{ URLROOT }}panel/adding" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="name" >
+    <select name="categories">
+        {% for cat in categories %}
+            <option value="{{ cat.id }}">{{ cat.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="file" name="image" accept="image/*">
+    <textarea name="text" id="" cols="30" rows="10"></textarea>
+    <input type="submit">
+</form>

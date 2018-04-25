@@ -1,0 +1,4 @@
+{% for cat in categories %}
+    <img src="{{ cat.getImage().url }}" alt="" style="width: 100px">
+    <a href="categories/{{ cat.id }}">{{ cat.name }}</a>
+{% endfor %}
